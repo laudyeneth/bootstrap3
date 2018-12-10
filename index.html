@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Proyecto E-commerce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- se muestren bien y el zoom funciona en móviles-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous"> <!--bootstrap alojado-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/estilos.css">
+    <!--Compilado de JavaScript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <!--======== PRIMERA FILA: MENU PRINCIPAL, ARRIBA========-->
+    <div class="row">
+      <div class="col-lg-12"> <!--ocupa las 12 columnas-->
+        <nav class="navbar navbar-inverse"> <!--inverse: estilo negro, letra gris- navbar-fixed-top: fijarla arriba-->
+          <div class="container-fluid">
+            <div class="navbar-header"> <!--item E-commerce-->
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">E-commerce</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Canasta</a></li>
+                <li><a href="#">Salir</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    
+    <!--========SEGUNDA FILA: CUERPO GENERAL DE LA PAGINA========-->
+    <div class="row">
+
+      <div class="col-lg-4"> <!--menú izquierda ocupa 4 columnas-->
+        <div class="col-lg-3"></div> <!--Menu navegacion ocupa 3 colum-->
+        <div class="col-lg-9"> <!--Cada item (camiseta) ocupa 3, para un total de 9 colum-->
+
+          <!--=========BARRA IZQUIERDA DE BUSQUEDA=========-->
+          <div class="input-group col-sm-12">
+            <input type="text" class="form-control" placeholder="Buscar camisetas">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+            </span>
+          </div>
+
+          <!-- ===========MENU CATEGORIAS===========-->
+          <br>
+          <div class=" hidden-md hidden-sm hidden-xs">
+            <h3><strong>Categorias</strong></h3>
+            <nav class="navbar navbar-default">
+              <ul class="nav nav-pills nav-stacked">
+                <li role="presentation" class="active"><a href="#">Todos<span class="badge pull-right ">100</span></a></li>
+                <li role="presentation"><a href="#">Hombre<span class="badge pull-right">4</span></a></li>
+                <li role="presentation"><a href="#">Mujer<span class="badge pull-right">12</span></a></li>
+                <li role="presentation"><a href="#">Hipster<span class="badge pull-right">24</span></a></li>
+                <li role="presentation"><a href="#">Metal<span class="badge pull-right">6</span></a></li>
+                <li role="presentation"><a href="#">Universidad<span class="badge pull-right">5</span></a></li>
+                <li role="presentation"><a href="#">Deportiva<span class="badge pull-right">8</span> </a></li>
+                <li role="presentation"><a href="#">Rayas<span class="badge pull-right">11</span></a></li>
+                <li role="presentation"><a href="#">Apretada<span class="badge pull-right">19</span></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      
+      <!--==========PANEL DERECHA========-->
+      <div class="col-lg-8">
+
+        <!--=========1) CARRUSEL DE IMAGENES CENTRAl=========-->
+        <div class="col-lg-10">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!--Indicadores-->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!--Envoltura imagenes-->
+            <div class="carousel-inner">
+              <div class="item active"><img src="imagenes/Imagen 1.jpg" alt="Camiseta 1" style="width:100%;"></div>
+              <div class="item"><img src="imagenes/Imagen 2.jpg" alt="Camiseta 2" style="width:100%;"></div>
+              <div class="item"><img src="imagenes/Imagen 3.jpg" alt="Camiseta 3" style="width:100%;"></div>
+            </div>
+            <!--Controles: derecha,izquierda-->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+
+        <!--========TERCERA FILA: SECCION DE PRODUCTOS========-->
+        <div class="row">
+          <div class="col-lg-10" id=products>
+
+            <!--Producto No. 1-->
+            <div class="col-lg-4 col-sm-4 col-xs-6">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <img src="imagenes/Camiseta 1.jpg" alt="camiseta hipster" style="width:100%;">
+                  <h4><strong>Hipster Ultimate</strong></h4>
+                  <p>La camiseta ideal para Hipters.</p>
+
+                  <!--BOTON PRECIO: producto 1 -->
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">$229<span class="glyphicon glyphicon-shopping-cart"></span></button>
+
+                  <!--BOTON DETALLES: Modal producto 1-->
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Detalles</button>
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <!--Header del modal-->
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Hipster Ultimate</h4>
+                        </div>
+                        <!--Contenido del modal-->
+                        <div class="modal-body">
+                          <!--FILA: Producto agotado-->
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="alert alert-info">
+                                <span class="glyphicon glyphicon-info-sign"></span>
+                                <strong>Este producto está agotado.</strong>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <!--COLUMNA: Imagen camiseta-->
+                            <div class="col-lg-6">
+                              <img src="imagenes/Camiseta 1.jpg" class="img-thumbnail" alt="camiseta 1" style="width:100%"> 
+                            </div> 
+                            <!--COLUMNA: Precio, calificación etc.--> 
+                            <div class="col-lg-6">
+                              <p>Precio:<strong>$299</strong></p> <!--Precio--> 
+                              <p>Calificación: <!--Calificación, con estrellas--> 
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                              </p> 
+                              <p><!--Hspeter y deportiva-->
+                                <span class="label label-warning">Hipster</span>
+                                <span class="label label-default">Deportiva</span>
+                              </p>
+                              <p> <!--Deseos-->
+                                <a href="url"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>Agregar a los deseos</a>
+                              </p>
+                            </div>
+                          </div>
+                          <p>
+                            <!--BARRA: Comentarios y descripción-->
+                            <ul class="nav nav-tabs">
+                              <li class="active"><a data-toggle="tab" href="#home">Descripción</a></li>
+                              <li><a data-toggle="tab" href="#menu1">Comentarios</a></li>
+                            </ul>
+                            <div class="tab-content">
+                              <div id="home" class="tab-pane fade ">
+                                <br>
+                                <p>Para este proyecto se implementa la estructura de una página web para un sitio e-commerce,
+                                  utilizando HTML, CSS y Bootstrap como se muestra en la imagen. </p>
+                              </div>
+                              <div id="menu1" class="tab-pane fade in active">
+                                  <div class="panel panel-default">
+                                      <div class="panel-heading">Germán Escobar comentó hace días</div>
+                                      <div class="panel-body">Esta camiseta está increible, la quiero!</div>
+                                  </div>
+                                  <textarea class="form-control" rows="3" id="comment" placeholder="Ingresa tu comentario"></textarea>
+                              </div>
+                            </div>
+                          </p>
+                        </div>
+                        <!--FOOTER: cerrar y comprar-->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default">Cerrar</button>
+                          <button type="button" class="btn btn-primary">Comprar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--Producto No. 2-->
+            <div class="col-lg-4 col-sm-4 col-xs-6">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <img src="imagenes/Camiseta 2.jpg" alt="camiseta 2" style="width:100%;">
+                  <h4><strong>On Motion Live</strong></h4>
+                  <p>Perfecta para salidas rocosas.</p>
+                  <button type="button" class="btn btn-primary">$29<span class="glyphicon glyphicon-shopping-cart"></span></button>
+                  <button type="button" class="btn btn-default">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!--Producto No. 3-->
+            <div class="col-lg-4 col-sm-4 col-xs-6">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <img src="imagenes/Camiseta 3.jpg" alt="camiseta-3" style="width:100%;">
+                  <h4><strong>Underground Max</strong></h4>
+                  <p>Para los amantes del underground.</p>
+                  <button type="button" class="btn btn-primary">$29<span class="glyphicon glyphicon-shopping-cart"></span></button>
+                  <button type="button" class="btn btn-default">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!--Producto No. 4-->
+            <div class="col-lg-4 col-sm-4 col-xs-6">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <img src="imagenes/Camiseta 4.jpg" alt="camiseta-4" style="width:100%;">
+                  <h4><strong>Santo Domingo Tigers</strong></h4>
+                  <p>La camiseta ideal </p>
+                  <button type="button" class="btn btn-primary">$29<span class="glyphicon glyphicon-shopping-cart"></span></button>
+                  <button type="button" class="btn btn-default">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!--Producto No. 5-->
+            <div class="col-lg-4 col-sm-4 col-xs-6">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <img src="images/camiseta-5.jpg" alt="camiseta-5" style="width:100%;">
+                  <h4><strong>Una camiseta mas</strong></h4>
+                  <p>La camiseta ideal para Hipters</p>
+                  <button type="button" class="btn btn-primary">$29<span class="glyphicon glyphicon-shopping-cart"></span></button>
+                  <button type="button" class="btn btn-default">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
